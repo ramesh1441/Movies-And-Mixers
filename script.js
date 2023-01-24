@@ -46,9 +46,35 @@ function getSadDrink() {
         ingredientsList.appendChild(listEl1)
       } 
 
+      if(randomItem.strIngredient2 !== null){      
         let listEl2 = document.createElement('li')
         listEl2.textContent = randomItem.strIngredient2
         ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl6)
+      }    
 
 		});
 }
