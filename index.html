@@ -5,8 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css.css" />
 </head>
 <body>
+    <div class="container">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Type a cocktail name..."
+            id="user-inp"
+            value=""
+          />
+          <button id="search-btn">Search</button>
+          <button type = 'Sadbutton' id="Sad">Feeling Sad </button>
+          <button id="Happy"> Feeling Happy </button>
+          <button id="Serious"> Feeling Serious </button>
+          <body> 
+            <button type= "button" id= "btn" onclick= "openGoogleByMethod()">Open Google</button>
+            </body>
+
+        </div>
+        <div id="result"></div>
+      </div>
+      <!-- Script -->
+      <script src="./script.js"></script>
     
 </body>
 </html>
+
+
+
