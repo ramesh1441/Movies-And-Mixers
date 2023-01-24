@@ -1,5 +1,8 @@
 
 let result = document.getElementById("result");
+var drinkTitle = document.getElementById("drinktitle");
+var ingredientsList = document.getElementById("ingredients");
+var instructionsDrink = document.getElementById("instructions")
 let searchBtn = document.getElementById("search-btn");
 let Sad = document.getElementById("Sad");
 let Happy = document.getElementById("Happy");
@@ -20,26 +23,49 @@ function getSadDrink() {
 		.then(data => {
       document.getElementById("Sad");
 		//document.getElementById("Margarita").value = "";
-        console.log(data);
+       console.log(data);
        
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
-       console.log(randomItem);
+       console.log("randomSadDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      //  let i = 1;
+      //  let ingredient = `strIngredient${i}`;
+      //  let currentIngredient =randomItem.ingredient
+      //  console.log("current ingredient",currentIngredient)
+      //  while(currentIngredient !== null){
+      //     console.log(currentIngredient)
+      //     ingredient = "strIngredient" + i;
+      //     currentIngredient =randomItem.ingredient
+      //     i++
+      //  }
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+
 		});
 }
 
-Happy.addEventListener('click', getHappyDrink);
+// Happy.addEventListener('click', getHappyDrink);
 
-function getHappyDrink () {
-	fetch(url + "Vodka")
-		.then(res => res.json())
-		.then(data => {
-		//document.getElementById("user-inp").value = "";
-        console.log(data);
+// function getHappyDrink () {
+// 	fetch(url + "Vodka")
+// 		.then(res => res.json())
+// 		.then(data => {
+// 		//document.getElementById("user-inp").value = "";
+//         console.log(data);
        
-        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
-        console.log(randomItem);
-		});
-}
+//         var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+//         console.log(randomItem);
+// 		});
+// }
 
 Serious.addEventListener('click', getCombativeDrink);
 
