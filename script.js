@@ -1,9 +1,14 @@
-<<<<<<< HEAD
+
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let Sad = document.getElementById("Sad");
 let Happy = document.getElementById("Happy");
-let Serious = document.getElementById("Serious");
+let Combative = document.getElementById("Combative");
+let Flirty = document.getElementById("Flirty");
+let Mysterious = document.getElementById("Mysterious");
+let Scary = document.getElementById("Scary");
+let Action = document.getElementById("Action");
+let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 Sad.addEventListener('click', getSadDrink);
@@ -13,6 +18,7 @@ function getSadDrink() {
 	fetch(url + userInput)
 		.then(res => res.json())
 		.then(data => {
+      document.getElementById("Sad");
 		//document.getElementById("Margarita").value = "";
         console.log(data);
        
@@ -35,7 +41,7 @@ function getHappyDrink () {
 		});
 }
 
-Serious.addEventListener('click', getSeriousDrink);
+Serious.addEventListener('click', getCombativeDrink);
 
 function getSeriousDrink () {
 	fetch(url + "Gin")
@@ -108,17 +114,17 @@ let getInfo = () => {
 window.addEventListener("load", getInfo);
 searchBtn.addEventListener("click", getInfo);
 
-=======
-var displayEL =$('#display');
-var showMoodBtnEl = $('#show-mood-btn');
-var buttonDisplayEl =$('#buttons');
-var clearEl = $('#clear');
 
-console.log(fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'))
-moodButtonEl.on('click', function() {
+// var displayEL =$('#display');
+//var showMoodBtnEl = $('#show-mood-btn');
+//var buttonDisplayEl =$('#buttons');
+// var clearEl = $('#clear');
+
+// console.log(fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'))
+//moodButtonEl.on('click', function() {
 //add function here to return a cocktail based on the mood click button.  Not sure how to do this yet//
-console.log('return drink');
-});
+//console.log('return drink');
+
 
 // Click on a button and return a result//
 // Need to create a button//
@@ -126,5 +132,5 @@ console.log('return drink');
 // Create a click on event listener for the button//
 // Build a function that executes on click//
 // Function calls and displays a cocktail name from third party API//
->>>>>>> f41ed3161e43f2055b48e344cfb23bde717f4be6
+
 
