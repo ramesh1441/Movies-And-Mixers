@@ -16,6 +16,7 @@ let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
 let movieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=romance&entity=movie&attribute=genreTerm"
 
 Sad.addEventListener('click', getSadDrink);
+Sad.addEventListener('click', getComedyMovies);
 
 function getSadDrink() {
     let userInput = "Tequila";

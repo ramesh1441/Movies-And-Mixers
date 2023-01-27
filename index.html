@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movies & Mixers</title>
     <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
     rel="stylesheet"
   />
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="./css.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./extra.css" />
 </head>
-<body>
-    <div class="container">
-        <div class="search-container">
-          <input
-            type="text"
-            placeholder="Type a cocktail name..."
-            id="user-inp"
-            value=""
-          />
-          <button id="search-btn">Search</button>
-          <button id="Sad"> Tearjerkers & Tales of Woe </button>
-          <button id="Happy"> Side Splitting & Silly </button>
-          <button id="Combative"> Combat & Courage </button>
-          <button id="Flirty"> Flirty & Frisky</button>
-          <button id="Mysterious"> Mystery & Mayhem </button>
-          <button id="Scary"> Horrific & Hair-Raising </button>
-          <button id="Action"> Action & Adventure</button>
-          <button id="Fantasy"> Fantasy & Futuristic </button>
-          <body> 
-            
-            </body>
 
-        </div>
+<body>
+  <header id="header" class="flex flex-col justify-center border-4 border-neutral-900 p-5">
+    <h1 class="text-center">Movies & Mixers</h1>
+    <p class="text-center">Hemming and hawing over films and fire water? Choose a category below for some counsel:</p>
+  </header>
+    <div class="container mx-auto">
+          <button id="search-btn">Search</button>
+          <hr />
+          <div class="flex flex-wrap justify-center">
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Sad"> Tearjerkers & Tales of Woe </button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Happy"> Side Splitting & Silly </button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Combative"> Combat & Courage </button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Flirty"> Flirty & Frisky</button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Mysterious"> Mystery & Mayhem </button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Scary"> Horrific & Hair-Raising </button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Action"> Action & Adventure</button>
+            <button class="circles m-5 border-4 border-neutral-900 rounded-full" id="Fantasy"> Fantasy & Futuristic </button>
+            </div>
+          <hr />
+        
         <div id="result">
           <h2 id="drinktitle"></h2>
           <ol id="ingredients"></ol>
           <p id="instructions"></p>
         </div>
       </div>
-      <!-- Script -->
       <script src="./script.js"></script>
     
 =======
