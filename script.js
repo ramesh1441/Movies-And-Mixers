@@ -3,6 +3,11 @@ let result = document.getElementById("result");
 var drinkTitle = document.getElementById("drinktitle");
 var ingredientsList = document.getElementById("ingredients");
 var instructionsDrink = document.getElementById("instructions")
+var moviename = document.getElementById("movieName");
+var actorname = document.getElementById("actorName");
+var rating = document.getElementById("parentalRating")
+var moviedescription = document.getElementById("movieDescription")
+var trackurl = document.getElementById("trackUrl")
 let searchBtn = document.getElementById("search-btn");
 let Sad = document.getElementById("Sad");
 let Happy = document.getElementById("Happy");
@@ -13,7 +18,7 @@ let Scary = document.getElementById("Scary");
 let Action = document.getElementById("Action");
 let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
-let movieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=romance&entity=movie&attribute=genreTerm"
+let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
 
 Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
@@ -74,13 +79,29 @@ function getSadDrink() {
 
       if(randomItem.strIngredient6 !== null){      
         let listEl6 = document.createElement('li')
-        listEl6.textContent = randomItem.strIngredient3
+        listEl6.textContent = randomItem.strIngredient6
         ingredientsList.appendChild(listEl6)
       }    
 
 		});
 }
-
+function getComedyMovies() {
+  fetch(comedymovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
 // Happy.addEventListener('click', getHappyDrink);
 
 // function getHappyDrink () {
@@ -95,7 +116,7 @@ function getSadDrink() {
 // 		});
 // }
 
-Serious.addEventListener('click', getCombativeDrink);
+/*Serious.addEventListener('click', getCombativeDrink);
 
 function getSeriousDrink () {
 	fetch(url + "Gin")
@@ -188,3 +209,4 @@ searchBtn.addEventListener("click", getInfo);
 // Function calls and displays a cocktail name from third party API//
 
 
+*/
