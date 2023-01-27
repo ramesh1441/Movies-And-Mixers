@@ -18,7 +18,7 @@ let Scary = document.getElementById("Scary");
 let Action = document.getElementById("Action");
 let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
-let movieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=romance&entity=movie&attribute=genreTerm";
+let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
 Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
 
@@ -85,7 +85,7 @@ function getSadDrink() {
 		});
 }
 function getComedyMovies() {
-  fetch(movieurl)
+  fetch(comedymovieurl)
     .then(res => res.json())
       .then(data => {
       //document.getElementById("Margarita").value = "";
