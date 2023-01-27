@@ -20,7 +20,14 @@ let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
 let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
 Sad.addEventListener('click', getSadDrink);
-Sad.addEventListener('click', getComedyMovies);
+Happy.addEventListener('click', getHappyDrink);
+Combative.addEventListener('click', getCombativeDrink);
+Flirty.addEventListener('click', getFlirtyDrink);
+Mysterious.addEventListener('click', getMysteriousDrink);
+Scary.addEventListener('click', getScaryDrinkk);
+Action.addEventListener('click', getActionDrink);
+Fantasy.addEventListener('click', getFantasyDrinkk);
+Sad.addEventListener('click', getSadDrink);
 
 function getSadDrink() {
     let userInput = "Tequila";
@@ -36,16 +43,7 @@ function getSadDrink() {
        drinkTitle.textContent=randomItem.strDrink;
        instructionsDrink.textContent=randomItem.strInstructions;
 
-      //  let i = 1;
-      //  let ingredient = `strIngredient${i}`;
-      //  let currentIngredient =randomItem.ingredient
-      //  console.log("current ingredient",currentIngredient)
-      //  while(currentIngredient !== null){
-      //     console.log(currentIngredient)
-      //     ingredient = "strIngredient" + i;
-      //     currentIngredient =randomItem.ingredient
-      //     i++
-      //  }
+     
       if(randomItem.strIngredients !== null){
         let listEl1 = document.createElement('li')
         listEl1.textContent = randomItem.strIngredient1
@@ -101,6 +99,60 @@ function getComedyMovies() {
        
       });
 }
+
+function getHappyDrink() {
+  let userInput = "Vodka";
+fetch(url + userInput)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("Happy");
+ 
+     console.log(data);
+     
+     var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+     console.log("randomHappyDrink",randomItem);
+     drinkTitle.textContent=randomItem.strDrink;
+     instructionsDrink.textContent=randomItem.strInstructions;
+
+     if(randomItem.strIngredients !== null){
+      let listEl1 = document.createElement('li')
+      listEl1.textContent = randomItem.strIngredient1
+      ingredientsList.appendChild(listEl1)
+    } 
+
+    if(randomItem.strIngredient2 !== null){      
+      let listEl2 = document.createElement('li')
+      listEl2.textContent = randomItem.strIngredient2
+      ingredientsList.appendChild(listEl2)
+    }    
+
+    if(randomItem.strIngredient3 !== null){      
+      let listEl3 = document.createElement('li')
+      listEl3.textContent = randomItem.strIngredient3
+      ingredientsList.appendChild(listEl3)
+    }    
+
+    if(randomItem.strIngredient4 !== null){      
+      let listEl4 = document.createElement('li')
+      listEl4.textContent = randomItem.strIngredient4
+      ingredientsList.appendChild(listEl4)
+    }    
+
+    if(randomItem.strIngredient5 !== null){      
+      let listEl5 = document.createElement('li')
+      listEl5.textContent = randomItem.strIngredient5
+      ingredientsList.appendChild(listEl5)
+    }    
+
+    if(randomItem.strIngredient6 !== null){      
+      let listEl6 = document.createElement('li')
+      listEl6.textContent = randomItem.strIngredient6
+      ingredientsList.appendChild(listEl6)
+    }    
+
+  });
+}
+
 // Happy.addEventListener('click', getHappyDrink);
 
 // function getHappyDrink () {
