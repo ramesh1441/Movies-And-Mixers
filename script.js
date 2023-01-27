@@ -72,7 +72,7 @@ function getSadDrink() {
 
       if(randomItem.strIngredient6 !== null){      
         let listEl6 = document.createElement('li')
-        listEl6.textContent = randomItem.strIngredient3
+        listEl6.textContent = randomItem.strIngredient6
         ingredientsList.appendChild(listEl6)
       }    
 
@@ -93,7 +93,7 @@ function getSadDrink() {
 // 		});
 // }
 
-Serious.addEventListener('click', getCombativeDrink);
+/*Serious.addEventListener('click', getCombativeDrink);
 
 function getSeriousDrink () {
 	fetch(url + "Gin")
@@ -186,3 +186,4 @@ searchBtn.addEventListener("click", getInfo);
 // Function calls and displays a cocktail name from third party API//
 
 
+*/
