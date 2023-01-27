@@ -19,6 +19,7 @@ let Action = document.getElementById("Action");
 let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
 let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
+
 Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
 
