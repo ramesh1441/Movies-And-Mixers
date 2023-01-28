@@ -1,12 +1,13 @@
 
 let result = document.getElementById("result");
 var drinkTitle = document.getElementById("drinktitle");
-var ingredientsList = document.getElementById("ingredients");
-var instructionsDrink = document.getElementById("instructions")
+var drinkImage = document.getElementById("image1");
+var instructionsDrink = document.getElementById("instructions");
 var moviename = document.getElementById("movieName");
 var actorname = document.getElementById("actorName");
 var rating = document.getElementById("parentalRating")
 var moviedescription = document.getElementById("movieDescription")
+var movieImage = document.getElementById("image2")
 var trackurl = document.getElementById("trackUrl")
 let searchBtn = document.getElementById("search-btn");
 let Sad = document.getElementById("Sad");
@@ -32,10 +33,14 @@ Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
 
 function getSadDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
+
     let userInput = "Tequila";
 	fetch(url + userInput)
 		.then(res => res.json())
 		.then(data => {
+      console.log("DATA: ", data)
       document.getElementById("Sad");
 		
        console.log(data);
@@ -43,39 +48,49 @@ function getSadDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomSadDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
+       
         let listEl1 = document.createElement('li')
         listEl1.textContent = randomItem.strIngredient1
         ingredientsList.appendChild(listEl1)
+     
       } 
 
-      if(randomItem.strIngredient2 !== null){      
+      if(randomItem.strIngredient2 !== null){  
+        
         let listEl2 = document.createElement('li')
         listEl2.textContent = randomItem.strIngredient2
         ingredientsList.appendChild(listEl2)
       }    
 
-      if(randomItem.strIngredient3 !== null){      
+      if(randomItem.strIngredient3 !== null){   
+       
         let listEl3 = document.createElement('li')
         listEl3.textContent = randomItem.strIngredient3
         ingredientsList.appendChild(listEl3)
       }    
 
-      if(randomItem.strIngredient4 !== null){      
+      if(randomItem.strIngredient4 !== null){  
+       
+   
         let listEl4 = document.createElement('li')
         listEl4.textContent = randomItem.strIngredient4
         ingredientsList.appendChild(listEl4)
       }    
 
-      if(randomItem.strIngredient5 !== null){      
+      if(randomItem.strIngredient5 !== null){    
+       
+        
         let listEl5 = document.createElement('li')
         listEl5.textContent = randomItem.strIngredient5
         ingredientsList.appendChild(listEl5)
       }    
 
-      if(randomItem.strIngredient6 !== null){      
+      if(randomItem.strIngredient6 !== null){    
+        
         let listEl6 = document.createElement('li')
         listEl6.textContent = randomItem.strIngredient6
         ingredientsList.appendChild(listEl6)
@@ -84,6 +99,7 @@ function getSadDrink() {
 		});
 }
 function getComedyMovies() {
+  movieImage.innerHTML="";
   fetch(comedymovieurl)
     .then(res => res.json())
       .then(data => {
@@ -93,6 +109,8 @@ function getComedyMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
+           
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -105,6 +123,9 @@ Happy.addEventListener('click', getHappyDrink);
 Happy.addEventListener('click', getWesternMovies);
 
 function getHappyDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
+
     let userInput = "Margarita";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -116,6 +137,7 @@ function getHappyDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomHappyDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -157,6 +179,7 @@ function getHappyDrink() {
 		});
 }
 function getWesternMovies() {
+  movieImage.innerHTML="";
   fetch(westernmovieurl)
     .then(res => res.json())
       .then(data => {
@@ -166,6 +189,7 @@ function getWesternMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100; 
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -178,6 +202,8 @@ Combative.addEventListener('click', getCombativeDrink);
 Combative.addEventListener('click', getCombativeMovies);
 
 function getCombativeDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Gin";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -189,6 +215,7 @@ function getCombativeDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomCombativeDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -239,6 +266,7 @@ function getCombativeMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100; 
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -251,6 +279,8 @@ Flirty.addEventListener('click', getFlirtyDrink);
 Flirty.addEventListener('click', getFlirtyMovies);
 
 function getFlirtyDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Negroni";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -262,6 +292,7 @@ function getFlirtyDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomFlirtyDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -312,6 +343,7 @@ function getFlirtyMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -324,6 +356,8 @@ Mysterious.addEventListener('click', getMysteryDrink);
 Mysterious.addEventListener('click', getMysteryMovies);
 
 function getMysteryDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Vodka";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -335,6 +369,7 @@ function getMysteryDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomMysteryDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -385,6 +420,7 @@ function getMysteryMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -397,6 +433,8 @@ Scary.addEventListener('click', getScaryDrink);
 Scary.addEventListener('click', getScaryMovies);
 
 function getScaryDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Rum";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -408,6 +446,7 @@ function getScaryDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomScaryDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -458,6 +497,7 @@ function getScaryMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -470,6 +510,8 @@ Action.addEventListener('click', getActionDrink);
 Action.addEventListener('click', getActionMovies);
 
 function getActionDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Brandy";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -481,6 +523,7 @@ function getActionDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomActionDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -531,6 +574,7 @@ function getActionMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;
@@ -543,6 +587,8 @@ Fantasy.addEventListener('click', getFantasyDrink);
 Fantasy.addEventListener('click', getFantasyMovies);
 
 function getFantasyDrink() {
+  var ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML="";
     let userInput = "Mojito";
 	fetch(url + userInput)
 		.then(res => res.json())
@@ -554,6 +600,7 @@ function getFantasyDrink() {
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
        console.log("randomFantasyDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
+       drinkImage.src = randomItem.strDrinkThumb;
        instructionsDrink.textContent=randomItem.strInstructions;
 
       if(randomItem.strIngredients !== null){
@@ -604,6 +651,7 @@ function getFantasyMovies() {
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
          console.log(randomMovie);
        moviename.textContent=randomMovie.trackName;
+       movieImage.src = randomMovie.artworkUrl100;
        actorname.textContent=randomMovie.artistName;
        rating.textContent=randomMovie.contentAdvisoryRating;
        moviedescription.textContent=randomMovie.longDescription;

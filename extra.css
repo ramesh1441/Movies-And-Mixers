@@ -2,3 +2,25 @@
     width: 200px;
     height: 200px;
 }
+#result {
+    float:right;
+               
+                width:45%;
+               
+                height:flex;
+}
+#movie {
+    float:left;
+    margin-left: 30px;
+    width:45%;
+    height:flex;
+}
+
+#image2 {
+
+    margin-left: 30px;
+    width:25%;
+    height:auto;
+
+
+}
