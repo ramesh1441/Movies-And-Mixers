@@ -18,9 +18,12 @@
     <h1 class="text-center">Movies & Mixers</h1>
     <p class="text-center">Hemming and hawing over films and fire water? Choose a category below for some counsel:</p>
   </header>
-    <div class="container mx-auto">
-          <button id="search-btn">Search</button>
+     <div 
+          class="container mx-auto">
+          <h1><em>Refresh Browser to Start Over</em></h1>
+         
           <hr />
+          
           <div class="flex flex-wrap justify-center">
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-indigo-400 to blue-800" id="Sad"> Tearjerkers & Tales of Woe </button>
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-yellow-400 to orange-500" id="Happy"> Side Splitting & Silly </button>
@@ -30,19 +33,19 @@
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-red-900 to stone-500" id="Scary"> Horrific & Hair-Raising </button>
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-orange-400 to amber-800" id="Action"> Action & Adventure</button>
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-teal-400 to teal-800" id="Fantasy"> Fantasy & Futuristic </button>
-            <h1><em>Refresh Browser to Start Over</em></h1>
-            </div>
+          </div>
           <hr />
         
-        <div class="container" id="result">
+          <div class="container" id="result">
           <h2 id="drinktitle"></h2>
-          <ol id="ingredients"></ol>
+          <li id="ingredients"></li>
+          <li id="measurements"></li>
           <p id="instructions"></p>
           <img id="drinkimage">
         </div>
       </div>
      
-      <div id="movie">
+      <div class="container" id="movie">
         <h2 id="movieName"></h2>
         <ol id="actorName"></ol>
         <ol id="parentalRating"></ol>

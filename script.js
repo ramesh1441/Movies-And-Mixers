@@ -1,6 +1,7 @@
 
 let result = document.getElementById("result");
 var drinkTitle = document.getElementById("drinktitle");
+var measureDrink = document.getElementById("measurement")
 var ingredientsList = document.getElementById("ingredients");
 var instructionsDrink = document.getElementById("instructions")
 var moviename = document.getElementById("movieName");
@@ -51,7 +52,7 @@ function getSadDrink() {
         let listEl1 = document.createElement('li')
         listEl1.textContent = randomItem.strIngredient1
         ingredientsList.appendChild(listEl1)
-      } 
+     } 
 
       if(randomItem.strIngredient2 !== null){      
         let listEl2 = document.createElement('li')
@@ -88,7 +89,7 @@ function getComedyMovies() {
   fetch(comedymovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+    
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
