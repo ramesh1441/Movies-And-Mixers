@@ -17,8 +17,7 @@ let Mysterious = document.getElementById("Mysterious");
 let Scary = document.getElementById("Scary");
 let Action = document.getElementById("Action");
 let Fantasy = document.getElementById("Fantasy");
-let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
-let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
+let image = document.getElementById("drinkimage");
 Sad.addEventListener('click', getSadDrink);
 Happy.addEventListener('click', getHappyDrink);
 Combative.addEventListener('click', getCombativeDrink);
@@ -28,6 +27,9 @@ Scary.addEventListener('click', getScaryDrink);
 Action.addEventListener('click', getActionDrink);
 Fantasy.addEventListener('click', getFantasyDrink);
 Sad.addEventListener('click', getSadDrink);
+let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
+let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
+
 
 function getSadDrink() {
     let userInput = "Tequila";
@@ -42,6 +44,7 @@ function getSadDrink() {
        console.log("randomSadDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
        instructionsDrink.textContent=randomItem.strInstructions;
+       image.src=randomItem.strDrinkThumb;
     
        
       if(randomItem.strIngredients !== null){
@@ -113,6 +116,7 @@ fetch(url + userInput)
      console.log("randomHappyDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -184,6 +188,7 @@ fetch(url + userInput)
      console.log("randomCombativeDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -238,6 +243,7 @@ fetch(url + userInput)
      console.log("randomFlirtyDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -292,6 +298,7 @@ fetch(url + userInput)
      console.log("randomScotchDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -345,6 +352,7 @@ fetch(url + userInput)
      console.log("randomRumDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -399,6 +407,7 @@ fetch(url + userInput)
      console.log("randomGinDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
@@ -452,6 +461,7 @@ fetch(url + userInput)
      console.log("randomCoffeeDrink",randomItem);
      drinkTitle.textContent=randomItem.strDrink;
      instructionsDrink.textContent=randomItem.strInstructions;
+     image.src=randomItem.strDrinkThumb;
 
      if(randomItem.strIngredients !== null){
       let listEl1 = document.createElement('li')
