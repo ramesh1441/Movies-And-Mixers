@@ -19,6 +19,15 @@ let Action = document.getElementById("Action");
 let Fantasy = document.getElementById("Fantasy");
 let url = "https://thecocktaildb.com/api/json/v1/1/search.php?s=";
 let comedymovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=comedy&entity=movie&attribute=genreTerm";
+let westernmovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=western&entity=movie&attribute=genreTerm";
+let sportsmovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=sports&entity=movie&attribute=genreTerm";
+let romanticmovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=romance&entity=movie&attribute=genreTerm";
+let thrillermovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=thriller&entity=movie&attribute=genreTerm";
+let horrormovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=horror&entity=movie&attribute=genreTerm";
+let actionmovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=action-adventure&entity=movie&attribute=genreTerm";
+let scifimovieurl = "https://cors-anywhere.herokuapp.com/itunes.apple.com/search?term=sci-fi-fantasy&entity=movie&attribute=genreTerm";
+
+
 Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
 
@@ -28,7 +37,7 @@ function getSadDrink() {
 		.then(res => res.json())
 		.then(data => {
       document.getElementById("Sad");
-		//document.getElementById("Margarita").value = "";
+		
        console.log(data);
        
        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
@@ -36,16 +45,6 @@ function getSadDrink() {
        drinkTitle.textContent=randomItem.strDrink;
        instructionsDrink.textContent=randomItem.strInstructions;
 
-      //  let i = 1;
-      //  let ingredient = `strIngredient${i}`;
-      //  let currentIngredient =randomItem.ingredient
-      //  console.log("current ingredient",currentIngredient)
-      //  while(currentIngredient !== null){
-      //     console.log(currentIngredient)
-      //     ingredient = "strIngredient" + i;
-      //     currentIngredient =randomItem.ingredient
-      //     i++
-      //  }
       if(randomItem.strIngredients !== null){
         let listEl1 = document.createElement('li')
         listEl1.textContent = randomItem.strIngredient1
@@ -101,6 +100,519 @@ function getComedyMovies() {
        
       });
 }
+
+Happy.addEventListener('click', getHappyDrink);
+Happy.addEventListener('click', getWesternMovies);
+
+function getHappyDrink() {
+    let userInput = "Margarita";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Happy");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomHappyDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getWesternMovies() {
+  fetch(westernmovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Combative.addEventListener('click', getCombativeDrink);
+Combative.addEventListener('click', getCombativeMovies);
+
+function getCombativeDrink() {
+    let userInput = "Gin";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Combative");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomCombativeDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getCombativeMovies() {
+  fetch(sportsmovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Flirty.addEventListener('click', getFlirtyDrink);
+Flirty.addEventListener('click', getFlirtyMovies);
+
+function getFlirtyDrink() {
+    let userInput = "Negroni";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Flirty");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomFlirtyDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getFlirtyMovies() {
+  fetch(romanticmovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Mysterious.addEventListener('click', getMysteryDrink);
+Mysterious.addEventListener('click', getMysteryMovies);
+
+function getMysteryDrink() {
+    let userInput = "Vodka";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Mysterious");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomMysteryDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getMysteryMovies() {
+  fetch(thrillermovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Scary.addEventListener('click', getScaryDrink);
+Scary.addEventListener('click', getScaryMovies);
+
+function getScaryDrink() {
+    let userInput = "Rum";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Scary");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomScaryDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getScaryMovies() {
+  fetch(horrormovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Action.addEventListener('click', getActionDrink);
+Action.addEventListener('click', getActionMovies);
+
+function getActionDrink() {
+    let userInput = "Brandy";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Action");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomActionDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getActionMovies() {
+  fetch(actionmovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+Fantasy.addEventListener('click', getFantasyDrink);
+Fantasy.addEventListener('click', getFantasyMovies);
+
+function getFantasyDrink() {
+    let userInput = "Mojito";
+	fetch(url + userInput)
+		.then(res => res.json())
+		.then(data => {
+      document.getElementById("Fantasy");
+		
+       console.log(data);
+       
+       var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
+       console.log("randomFantasyDrink",randomItem);
+       drinkTitle.textContent=randomItem.strDrink;
+       instructionsDrink.textContent=randomItem.strInstructions;
+
+      if(randomItem.strIngredients !== null){
+        let listEl1 = document.createElement('li')
+        listEl1.textContent = randomItem.strIngredient1
+        ingredientsList.appendChild(listEl1)
+      } 
+
+      if(randomItem.strIngredient2 !== null){      
+        let listEl2 = document.createElement('li')
+        listEl2.textContent = randomItem.strIngredient2
+        ingredientsList.appendChild(listEl2)
+      }    
+
+      if(randomItem.strIngredient3 !== null){      
+        let listEl3 = document.createElement('li')
+        listEl3.textContent = randomItem.strIngredient3
+        ingredientsList.appendChild(listEl3)
+      }    
+
+      if(randomItem.strIngredient4 !== null){      
+        let listEl4 = document.createElement('li')
+        listEl4.textContent = randomItem.strIngredient4
+        ingredientsList.appendChild(listEl4)
+      }    
+
+      if(randomItem.strIngredient5 !== null){      
+        let listEl5 = document.createElement('li')
+        listEl5.textContent = randomItem.strIngredient5
+        ingredientsList.appendChild(listEl5)
+      }    
+
+      if(randomItem.strIngredient6 !== null){      
+        let listEl6 = document.createElement('li')
+        listEl6.textContent = randomItem.strIngredient6
+        ingredientsList.appendChild(listEl6)
+      }    
+
+		});
+}
+function getFantasyMovies() {
+  fetch(scifimovieurl)
+    .then(res => res.json())
+      .then(data => {
+      //document.getElementById("Margarita").value = "";
+          console.log(data);
+         
+        var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
+         console.log(randomMovie);
+       moviename.textContent=randomMovie.trackName;
+       actorname.textContent=randomMovie.artistName;
+       rating.textContent=randomMovie.contentAdvisoryRating;
+       moviedescription.textContent=randomMovie.longDescription;
+       trackurl.textContent=randomMovie.trackViewUrl;
+       
+      });
+}
+
+
 // Happy.addEventListener('click', getHappyDrink);
 
 // function getHappyDrink () {
