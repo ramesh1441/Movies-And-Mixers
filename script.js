@@ -44,7 +44,7 @@ function getSadDrink() {
        console.log("randomSadDrink",randomItem);
        drinkTitle.textContent=randomItem.strDrink;
        instructionsDrink.textContent=randomItem.strInstructions;
-       image.src=randomItem.strDrinkThumb;
+       image.src=randomItem.strDrinkThumb; (innerHeight = 10, innerWidth = 10);
     
        
       if(randomItem.strIngredients !== null){
@@ -82,8 +82,7 @@ function getSadDrink() {
         listEl6.textContent = randomItem.strIngredient6
         ingredientsList.appendChild(listEl6)
       }    
-
-		});
+  		});
 }
 function getComedyMovies() {
   fetch(comedymovieurl)
