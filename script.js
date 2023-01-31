@@ -205,6 +205,7 @@ Combative.addEventListener('click', getCombativeDrink);
 Combative.addEventListener('click', getCombativeMovies);
 
 function getCombativeDrink() {
+  localStorage.setItem("history", "Combative");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Gin";
@@ -282,6 +283,7 @@ Flirty.addEventListener('click', getFlirtyDrink);
 Flirty.addEventListener('click', getFlirtyMovies);
 
 function getFlirtyDrink() {
+  localStorage.setItem("history", "Flirty");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Negroni";
@@ -359,6 +361,7 @@ Mysterious.addEventListener('click', getMysteryDrink);
 Mysterious.addEventListener('click', getMysteryMovies);
 
 function getMysteryDrink() {
+  localStorage.setItem("history", "Mysterious");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Vodka";
@@ -436,6 +439,7 @@ Scary.addEventListener('click', getScaryDrink);
 Scary.addEventListener('click', getScaryMovies);
 
 function getScaryDrink() {
+  localStorage.setItem("history", "Scary");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Rum";
@@ -513,6 +517,7 @@ Action.addEventListener('click', getActionDrink);
 Action.addEventListener('click', getActionMovies);
 
 function getActionDrink() {
+  localStorage.setItem("history", "Action");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Brandy";
@@ -590,6 +595,7 @@ Fantasy.addEventListener('click', getFantasyDrink);
 Fantasy.addEventListener('click', getFantasyMovies);
 
 function getFantasyDrink() {
+  localStorage.setItem("history", "Fantasy");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Mojito";
@@ -679,7 +685,24 @@ if(history == "Sad") {
 } else if(history == "Happy") {
   Happy.click();
 }
-
+else if(history == "Combative") {
+  Combative.click();
+}
+else if(history == "Flirty") {
+  Flirty.click();
+}
+else if(history == "Mysterious") {
+  Mysterious.click();
+}
+else if(history == "Scary") {
+  Scary.click();
+}
+else if(history == "Action") {
+  Action.click();
+}
+else if(history == "Fantasy") {
+  Fantasy.click();
+}
 // Happy.addEventListener('click', getHappyDrink);
 
 // function getHappyDrink () {
