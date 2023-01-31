@@ -104,7 +104,7 @@ function getComedyMovies() {
   fetch(comedymovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+     
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -186,7 +186,7 @@ function getWesternMovies() {
   fetch(westernmovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+   
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -205,6 +205,7 @@ Combative.addEventListener('click', getCombativeDrink);
 Combative.addEventListener('click', getCombativeMovies);
 
 function getCombativeDrink() {
+  localStorage.setItem("history", "Combative");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Gin";
@@ -263,7 +264,7 @@ function getCombativeMovies() {
   fetch(sportsmovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+   
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -282,6 +283,7 @@ Flirty.addEventListener('click', getFlirtyDrink);
 Flirty.addEventListener('click', getFlirtyMovies);
 
 function getFlirtyDrink() {
+  localStorage.setItem("history", "Flirty");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Negroni";
@@ -340,7 +342,7 @@ function getFlirtyMovies() {
   fetch(romanticmovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+     
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -359,6 +361,7 @@ Mysterious.addEventListener('click', getMysteryDrink);
 Mysterious.addEventListener('click', getMysteryMovies);
 
 function getMysteryDrink() {
+  localStorage.setItem("history", "Mysterious");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Vodka";
@@ -417,7 +420,7 @@ function getMysteryMovies() {
   fetch(thrillermovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+   
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -436,6 +439,7 @@ Scary.addEventListener('click', getScaryDrink);
 Scary.addEventListener('click', getScaryMovies);
 
 function getScaryDrink() {
+  localStorage.setItem("history", "Scary");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Rum";
@@ -494,7 +498,7 @@ function getScaryMovies() {
   fetch(horrormovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+    
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -513,6 +517,7 @@ Action.addEventListener('click', getActionDrink);
 Action.addEventListener('click', getActionMovies);
 
 function getActionDrink() {
+  localStorage.setItem("history", "Action");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Brandy";
@@ -571,7 +576,7 @@ function getActionMovies() {
   fetch(actionmovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+      
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -590,6 +595,7 @@ Fantasy.addEventListener('click', getFantasyDrink);
 Fantasy.addEventListener('click', getFantasyMovies);
 
 function getFantasyDrink() {
+  localStorage.setItem("history", "Fantasy");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
     let userInput = "Mojito";
@@ -648,7 +654,7 @@ function getFantasyMovies() {
   fetch(scifimovieurl)
     .then(res => res.json())
       .then(data => {
-      //document.getElementById("Margarita").value = "";
+     
           console.log(data);
          
         var randomMovie = data.results[Math.floor(Math.random()*data.results.length)];
@@ -663,14 +669,6 @@ function getFantasyMovies() {
       });
 }
 
-// let Sad = document.getElementById("Sad");
-// let Happy = document.getElementById("Happy");
-// let Combative = document.getElementById("Combative");
-// let Flirty = document.getElementById("Flirty");
-// let Mysterious = document.getElementById("Mysterious");
-// let Scary = document.getElementById("Scary");
-// let Action = document.getElementById("Action");
-// let Fantasy = document.getElementById("Fantasy");
 
 let history = localStorage.getItem("history") || "none";
 
@@ -679,112 +677,21 @@ if(history == "Sad") {
 } else if(history == "Happy") {
   Happy.click();
 }
-
-// Happy.addEventListener('click', getHappyDrink);
-
-// function getHappyDrink () {
-// 	fetch(url + "Vodka")
-// 		.then(res => res.json())
-// 		.then(data => {
-// 		//document.getElementById("user-inp").value = "";
-//         console.log(data);
-       
-//         var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
-//         console.log(randomItem);
-// 		});
-// }
-
-/*Serious.addEventListener('click', getCombativeDrink);
-
-function getSeriousDrink () {
-	fetch(url + "Gin")
-		.then(res => res.json())
-		.then(data => {
-		//document.getElementById("user-inp").value = "";
-        console.log(data);
-        
-        var randomItem = data.drinks[Math.floor(Math.random()*data.drinks.length)];
-        console.log(randomItem);
-		});
+else if(history == "Combative") {
+  Combative.click();
 }
-
-
-let getInfo = () => {
-  let userInp = document.getElementById("user-inp").value;
-  if (userInp.length == 0) {
-    result.innerHTML = `<h3 class="msg">The input field cannot be empty</h3>`;
-  } else {
-    fetch(url + userInp)
-      .then((response) => response.json())
-      .then((data) => {
-        document.getElementById("user-inp").value = "";
-        console.log(data);
-        console.log(data.drinks[0]);
-        let myDrink = data.drinks[0];
-        console.log(myDrink.strDrink);
-        console.log(myDrink.strDrinkThumb);
-        console.log(myDrink.strInstructions);
-        let count = 1;
-        let ingredients = [];
-        for (let i in myDrink) {
-          let ingredient = "";
-          let measure = "";
-          if (i.startsWith("strIngredient") && myDrink[i]) {
-            ingredient = myDrink[i];
-            if (myDrink[`strMeasure` + count]) {
-              measure = myDrink[`strMeasure` + count];
-            } else {
-              measure = "";
-            }
-            count += 1;
-            ingredients.push(`${measure} ${ingredient}`);
-          }
-        }
-        console.log(ingredients);
-        result.innerHTML = `
-      <img src=${myDrink.strDrinkThumb}>
-      <h2>${myDrink.strDrink}</h2>
-      <h3>Ingredients:</h3>
-      <ul class="ingredients"></ul>
-      <h3>Instructions:</h3>
-      <p>${myDrink.strInstructions}</p>
-      `;
-        let ingredientsCon = document.querySelector(".ingredients");
-        ingredients.forEach((item) => {
-          let listItem = document.createElement("li");
-          listItem.innerText = item;
-          ingredientsCon.appendChild(listItem);
-        });
-      })
-      .catch(() => {
-        result.innerHTML = `<h3 class="msg">Please enter a valid input</h3>`;
-      });
-  }
-};
-
-
-
-window.addEventListener("load", getInfo);
-searchBtn.addEventListener("click", getInfo);
-
-
-// var displayEL =$('#display');
-//var showMoodBtnEl = $('#show-mood-btn');
-//var buttonDisplayEl =$('#buttons');
-// var clearEl = $('#clear');
-
-// console.log(fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'))
-//moodButtonEl.on('click', function() {
-//add function here to return a cocktail based on the mood click button.  Not sure how to do this yet//
-//console.log('return drink');
-
-
-// Click on a button and return a result//
-// Need to create a button//
-// Identify the Button - Variable //
-// Create a click on event listener for the button//
-// Build a function that executes on click//
-// Function calls and displays a cocktail name from third party API//
-
-
-*/
+else if(history == "Flirty") {
+  Flirty.click();
+}
+else if(history == "Mysterious") {
+  Mysterious.click();
+}
+else if(history == "Scary") {
+  Scary.click();
+}
+else if(history == "Action") {
+  Action.click();
+}
+else if(history == "Fantasy") {
+  Fantasy.click();
+}
