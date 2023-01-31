@@ -12,3 +12,9 @@
     border-color: black;
     border-width: 1px;
 }
+#drinktitle {
+    font-weight: bold;
+}
+#movieName {
+    font-weight: bold;
+}

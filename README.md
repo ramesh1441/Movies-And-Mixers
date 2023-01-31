@@ -12,10 +12,10 @@ By using a movie database API, we were able to pull movies based on Genre and ou
 By using a cocktail database API, we were able to sort drinks by alcohol and then assign them to the relative movie genre (example: a romantic movie will generate with a wine or champagne cocktail) and then output a recipe and a picture of the drink.
 
 ### Our team
-Christopher Lee ()
-Chelsea Pederson 
-Ramesh Ramaswamy
-Flik Umbriaco
+Christopher Lee (github.com/chrislee1659)
+Chelsea Pederson (github.com/chelsea-marie)
+Ramesh Ramaswamy (github.com/ramesh1441)
+Flik Umbriaco (github.com/flikumbriaco)
 
 ### Our project details
 Project Proposal:
