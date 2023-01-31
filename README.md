@@ -27,7 +27,7 @@ Project Proposal:
 https://docs.google.com/document/d/1GsKbuHbfhYWZv9JgIWdehp9fi2Qvr2G_VMkaSWmpEu4/edit?usp=sharing
 
 Movies & Mixers URL:
-file:///C:/Users/chels/bootcamp/modules/Movies-And-Mixers/index.html
+https://ramesh1441.github.io/Movies-And-Mixers/
 
 https://cors-anywhere.herokuapp.com/corsdemo (for movie API)
 
