@@ -33,6 +33,7 @@ Sad.addEventListener('click', getSadDrink);
 Sad.addEventListener('click', getComedyMovies);
 
 function getSadDrink() {
+  localStorage.setItem("history", "Sad");
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
 
@@ -123,6 +124,8 @@ Happy.addEventListener('click', getHappyDrink);
 Happy.addEventListener('click', getWesternMovies);
 
 function getHappyDrink() {
+  localStorage.setItem("history", "Happy");
+
   var ingredientsList = document.getElementById("ingredients");
   ingredientsList.innerHTML="";
 
@@ -660,6 +663,22 @@ function getFantasyMovies() {
       });
 }
 
+// let Sad = document.getElementById("Sad");
+// let Happy = document.getElementById("Happy");
+// let Combative = document.getElementById("Combative");
+// let Flirty = document.getElementById("Flirty");
+// let Mysterious = document.getElementById("Mysterious");
+// let Scary = document.getElementById("Scary");
+// let Action = document.getElementById("Action");
+// let Fantasy = document.getElementById("Fantasy");
+
+let history = localStorage.getItem("history") || "none";
+
+if(history == "Sad") {
+  Sad.click()
+} else if(history == "Happy") {
+  Happy.click();
+}
 
 // Happy.addEventListener('click', getHappyDrink);
 

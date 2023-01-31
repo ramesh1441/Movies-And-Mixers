@@ -14,12 +14,11 @@
 </head>
 
 <body>
-  <header id="header" class="flex flex-col justify-center border-4 border-neutral-900 p-5">
+  <header id="header" class="flex flex-col justify-center border-2 border-neutral-900 p-5">
     <h1 class="text-center">Movies & Mixers</h1>
     <p class="text-center">Hemming and hawing over films and fire water? Choose a category below for some counsel:</p>
   </header>
     <div class="container mx-auto">
-          <button id="search-btn">Search</button>
           <hr />
           <div class="flex flex-wrap justify-center">
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-indigo-400 to blue-800" id="Sad"> Tearjerkers & Tales of Woe </button>
@@ -32,24 +31,27 @@
             <button class="circles m-5 border-4 border-neutral-900 rounded-full bg-gradient-to-r from-teal-400 to teal-800" id="Fantasy"> Fantasy & Futuristic </button>
             </div>
           <hr />
-    <hr >
-        <div class="container1" id="result">
-          <h2 id="drinktitle"></h2>
-          <img id="image1"></img>
-          <ol id="ingredients"></ol>
-          <p id="instructions"></p>
-        </div>
-     
-      <div class="container2" id="movie">
+    <hr id="border1">
+    <div class="flex">
+      <div class="container2 flex-1 border-r-2 border-neutral-900 p-5" id="movie">
         <h2 id="movieName"></h2>
         <img id="image2"></img>
         <ol id="actorName"></ol>
         <ol id="parentalRating"></ol>
         <p id="movieDescription"></p>
-        <p id="trackUrl"></p>
+        <p id="trackUrl"></p>  
+      </div>
+      <div class="container1 flex-1 p-5" id="result">
+          <h2 id="drinktitle"></h2>
+          <img class="w-1/3" id="image1"></img>
+          <ol id="ingredients"></ol>
+          <p id="instructions"></p>
+        </div>
       </div>
     </div>
     <hr />
+    <footer id="footer" class="flex flex-col justify-center border-2 border-neutral-900 p-5"><p>Made using Tailwind CSS</p>
+    </footer>
     <script src="./script.js"></script>
 
 
