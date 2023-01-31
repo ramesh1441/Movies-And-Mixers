@@ -27,4 +27,3 @@ file:///C:/Users/chels/bootcamp/modules/Movies-And-Mixers/index.html
 
 https://cors-anywhere.herokuapp.com/corsdemo (for movie API)
 
-Movies & Mixers image:
