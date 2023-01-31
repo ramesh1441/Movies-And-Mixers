@@ -2,25 +2,13 @@
     width: 200px;
     height: 200px;
 }
-#result {
-    float:right;
-               
-                width:45%;
-               
-                height:flex;
-}
-#movie {
-    float:left;
-    margin-left: 30px;
-    width:45%;
-    height:flex;
-}
 
 #image2 {
+    width: 150px;
+    height: 150px;
 
-    margin-left: 30px;
-    width:25%;
-    height:auto;
-
-
+}
+#border1 {
+    border-color: black;
+    border-width: 1px;
 }
